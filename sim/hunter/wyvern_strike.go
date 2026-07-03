@@ -11,7 +11,7 @@ import (
 func (hunter *Hunter) getWyvernStrikeConfig(rank int) core.SpellConfig {
 	spellId := [4]int32{0, 458436, 458481, 458482}[rank]
 	manaCost := [4]float64{0, 55, 75, 100}[rank]
-	level := [4]int{0, 1, 50, 60}[rank]
+	level := [4]int{0, 40, 50, 60}[rank]
 
 	// The spell tooltips list 3/4/6 on the respective ranks, but Zirene confirmed it's actually 10%.
 	bleedCoeff := 0.10
@@ -83,7 +83,7 @@ func (hunter *Hunter) registerWyvernStrikeSpell() {
 	}
 
 	rank := map[int32]int{
-		1:  1,
+		40: 1,
 		50: 2,
 		60: 3,
 	}[hunter.Level]
